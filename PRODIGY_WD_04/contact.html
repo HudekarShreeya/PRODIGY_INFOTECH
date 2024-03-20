@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional custom styles */
+    body {
+      font-family: 'Helvetica', sans-serif;
+	 background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-image: url('images\cnt.png'); /* Replace 'your-background-image.jpg' with the path to your image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+     header {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .intro img {
+      border-radius: 50%;
+    }
+
+    /* Additional styles for Contact Me section */
+    #contact {
+      text-align: center;
+      margin-top: 40px; /* Add margin to the top */
+    }
+    #contactForm {
+      display: inline-block;
+      text-align: left;
+      max-width: 400px; /* Adjust the maximum width as needed */
+      margin: 0 auto; /* Center the form horizontally */
+    }
+    #contactForm label,
+    #contactForm input,
+    #contactForm textarea,
+    #contactForm button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    #contactForm button {
+      width: auto; /* Reset width for button */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>My Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="confirmationMessage" style="display: none;">Message sent successfully!</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      // Here you can perform actions with the form data, like sending it to a server
+      
+      // Display a confirmation message
+      document.getElementById('confirmationMessage').style.display = 'block';
+      
+      // Clear form fields after submission (optional)
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
